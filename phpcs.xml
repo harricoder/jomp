@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ruleset name="Jomp Rules">
+    <description>Jomp coding standards</description>
+
+    <!-- display progress -->
+    <arg value="p"/>
+    <!-- use colors in output -->
+    <arg name="colors"/>
+
+    <!-- inherit rules from: -->
+    <rule ref="PSR12"/>
+    <rule ref="Generic.PHP.DeprecatedFunctions"/>
+    <rule ref="Generic.Arrays.DisallowLongArraySyntax"/>
+
+
+    <!-- The soft limit on line length MUST be 120 characters;
+    automated style checkers MUST warn but MUST NOT error at the soft limit. -->
+    <rule ref="Generic.Files.LineLength">
+        <properties>
+            <property name="lineLimit" value="80"/>
+            <property name="absoluteLineLimit" value="120"/>
+        </properties>
+    </rule>
+
+    <!-- The closing ?> tag MUST be omitted from files containing only PHP. -->
+    <rule ref="Zend.Files.ClosingTag"/>
+
+    <!-- All PHP files MUST use the Unix LF (linefeed) line ending. -->
+    <rule ref="Generic.Files.LineEndings">
+        <properties>
+            <property name="eolChar" value="\n"/>
+        </properties>
+    </rule>
+
+    <rule ref="PSR1.Classes.ClassDeclaration">
+        <exclude-pattern>tests/bootstrap.php</exclude-pattern>
+    </rule>
+
+    <!-- Disable Camel case rule for tests (following Laravel conventions). -->
+    <rule ref="PSR1.Methods.CamelCapsMethodName">
+        <exclude-pattern>./tests/*</exclude-pattern>
+    </rule>
+
+    <!-- Prevent these functions leaking into production code. -->
+    <rule ref="Generic.PHP.ForbiddenFunctions">
+        <properties>
+            <property name="forbiddenFunctions" type="array">
+                <element key="compact" value="null"/>
+                <element key="dd" value="null"/>
+                <element key="dump" value="null"/>
+                <element key="var_dump" value="null"/>
+                <element key="ray" value="null"/>
+            </property>
+        </properties>
+    </rule>
+
+    <!-- Paths to check -->
+    <file>app</file>
+    <file>bootstrap</file>
+    <file>config</file>
+    <file>database</file>
+    <file>resources</file>
+    <file>routes</file>
+    <file>tests</file>
+
+    <!-- <exclude-pattern>tests/bootstrap.php</exclude-pattern> -->
+    <exclude-pattern>*/.phpstorm.meta.php</exclude-pattern>
+    <exclude-pattern>*/_ide_helper.php</exclude-pattern>
+    <exclude-pattern>*/database/*</exclude-pattern>
+    <exclude-pattern>*/cache/*</exclude-pattern>
+    <exclude-pattern>*/*.js</exclude-pattern>
+    <exclude-pattern>*/*.css</exclude-pattern>
+    <exclude-pattern>*/*.xml</exclude-pattern>
+    <exclude-pattern>*/*.blade.php</exclude-pattern>
+    <exclude-pattern>*/autoload.php</exclude-pattern>
+    <exclude-pattern>*/storage/*</exclude-pattern>
+    <exclude-pattern>*/docs/*</exclude-pattern>
+    <exclude-pattern>*/vendor/*</exclude-pattern>
+    <exclude-pattern>*/migrations/*</exclude-pattern>
+    <exclude-pattern>*/config/*</exclude-pattern>
+    <exclude-pattern>*/public/index.php</exclude-pattern>
+    <exclude-pattern>*/*.blade.php</exclude-pattern>
+    <exclude-pattern>*/Console/Kernel.php</exclude-pattern>
+    <exclude-pattern>*/Exceptions/Handler.php</exclude-pattern>
+    <exclude-pattern>*/Http/Kernel.php</exclude-pattern>
+    <exclude-pattern>*/Providers/*</exclude-pattern>
+    <exclude-pattern>*/resources/lang/*</exclude-pattern>
+</ruleset>
