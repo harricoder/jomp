@@ -54,7 +54,7 @@
         "post-create-project-cmd": [
             "@php artisan key:generate --ansi"
         ],
-        "quality:phpstan":  "./vendor/bin/phpstan analyse --memory-limit=2G",
+        "quality:phpstan":  "./vendor/bin/phpstan analyse -c phpstan.neon --memory-limit=2G",
         "quality:phpmd": "./vendor/bin/phpmd app ansi codesize,controversial,design,naming,unusedcode",
         "lint:pint": "./vendor/bin/pint --test -v",
         "lint:tlint": "./vendor/bin/tlint lint",
