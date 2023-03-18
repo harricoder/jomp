@@ -52,7 +52,7 @@ class ProfileController extends Controller
             'password' => ['required', 'current-password'],
         ]);
 
-        Auth::logout();
+        auth()->logout();
 
         /** @var User $user */
         $user = $request->user();
