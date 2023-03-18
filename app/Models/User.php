@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Models;
 
 use Illuminate\Auth\Notifications\VerifyEmail;
@@ -11,7 +13,9 @@ use Laravel\Sanctum\HasApiTokens;
 
 class User extends AuthUser implements MustVerifyEmail
 {
-    use HasApiTokens, HasFactory, Notifiable;
+    use HasApiTokens;
+    use HasFactory;
+    use Notifiable;
 
     /**
      * The attributes that are mass assignable.
@@ -45,7 +49,7 @@ class User extends AuthUser implements MustVerifyEmail
 
     public function hasVerifiedEmail(): bool
     {
-        return $this->email_verified_at != null;
+        return $this->email_verified_at !== null;
     }
 
     public function markEmailAsVerified(): bool
