@@ -8,8 +8,6 @@ use App\Http\Requests\ProfileUpdateRequest;
 use App\Models\User;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Redirect;
 use Illuminate\View\View;
 
 class ProfileController extends Controller
@@ -40,7 +38,7 @@ class ProfileController extends Controller
 
         $user->save();
 
-        return Redirect::route('profile.edit')->with('status', 'profile-updated');
+        return redirect()->route('profile.edit')->with('status', 'profile-updated');;
     }
 
     /**
@@ -52,15 +50,14 @@ class ProfileController extends Controller
             'password' => ['required', 'current-password'],
         ]);
 
-        auth()->logout();
-
         /** @var User $user */
         $user = $request->user();
+        auth()->logout();
         $user->delete();
 
         $request->session()->invalidate();
         $request->session()->regenerateToken();
 
-        return Redirect::to('/');
+        return redirect('/');
     }
 }
