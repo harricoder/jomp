@@ -11,7 +11,7 @@ use Illuminate\Foundation\Auth\User as AuthUser;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
-class User extends AuthUser implements MustVerifyEmail
+class User extends AuthUser
 {
     use HasApiTokens;
     use HasFactory;
@@ -46,26 +46,4 @@ class User extends AuthUser implements MustVerifyEmail
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
-
-    public function hasVerifiedEmail(): bool
-    {
-        return $this->email_verified_at !== null;
-    }
-
-    public function markEmailAsVerified(): bool
-    {
-        return $this->update([
-            'email_verified_at' => now(),
-        ]);
-    }
-
-    public function sendEmailVerificationNotification(): void
-    {
-        $this->notify(new VerifyEmail());
-    }
-
-    public function getEmailForVerification(): string
-    {
-        return $this->email;
-    }
 }
