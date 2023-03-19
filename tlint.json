@@ -1,6 +1,6 @@
 {
     "preset": "laravel",
-    "disabled": ["ArrayParametersOverViewWith"],
+    "disabled": [],
     "excluded": ["tests/"],
     "paths": [
         {
