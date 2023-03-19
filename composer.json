@@ -82,7 +82,7 @@
             "./vendor/bin/phpunit"
         ],
         "test": [
-            "@fix:test"
+            "@code:test"
         ],
         "ci": [
             "@composer validate --strict",
