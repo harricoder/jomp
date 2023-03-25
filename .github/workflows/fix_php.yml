@@ -12,15 +12,15 @@ jobs:
   php-cs-fixer:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with:
           ref: ${{ github.head_ref }}
 
-      - name: Install
+      - name: Install Composer
         run: composer install
 
-      - name: Run php-cs-fixer
-        run: ./vendor/bin/php-cs-fixer fix
+      - name: Run PHP Code fixers
+        run: composer code:fix
 
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
