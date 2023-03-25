@@ -177,7 +177,7 @@ jobs:
         env:
           DB_CONNECTION: sqlite
           DB_DATABASE: database/database.sqlite
-        run: php artisan test --min=70 --profile --coverage --coverage-clover=clover.xml
+        run: php artisan test --min=70 --profile --coverage --coverage-clover=coverage.xml
 
       - name: Upload coverage reports to Codecov
         uses: codecov/codecov-action@v3

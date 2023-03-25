@@ -1,66 +1,119 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+<h2 align="center">
+    <a href="#" target="_blank">
+        <img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo">
+    </a>
+</h2>
+<a name="readme-top"></a>
 
 <p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+    <a href=""><img src="https://img.shields.io/badge/PHP-8-777BB4?style=for-the-badge&logo=php&logoColor=white" alt="PHP"</img></a>
+    <a href=""><img src="https://img.shields.io/badge/Laravel-FF2D20?style=for-the-badge&logo=laravel&logoColor=white" alt="Laravel 10"</img></a>
+    <a href=""><img src="https://img.shields.io/badge/Alpine%20JS-8BC0D0?style=for-the-badge&logo=alpinedotjs&logoColor=black" alt="Alpine JS"</img></a>
 </p>
 
-## About Laravel
+<p align="center">
+    <a href="https://codecov.io/gh/harricoder/jomp"><img src="https://codecov.io/gh/harricoder/jomp/branch/main/graph/badge.svg?token=N7ZQ36DJ7Q"/></a>
+    <a href="https://github.com/harricoder/jomp/actions?query=workflow%3ALint Code+branch%3Amain"><img src="https://github.com/harricoder/jomp/workflows/Lint Code/badge.svg" alt="Code Lint"></a>
+    <a href="https://github.com/harricoder/jomp/actions?query=workflow%3ACode Quality+branch%3Amain"><img src="https://github.com/harricoder/jomp/workflows/Code Quality/badge.svg" alt="Code Quality"></a>
+    <a href="https://github.com/harricoder/jomp/actions?query=workflow%3ATest Code+branch%3Amain"><img src="https://github.com/harricoder/jomp/workflows/Test Code/badge.svg" alt="Code Testing></a>
+    <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+</p>
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+# <Your-Project-Title>
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## ⚡️ Description
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Just One More Plugin (Jomp) - DAW plugin wishlist manager.
 
-## Learning Laravel
+- Keep track of DAW plugins (VSTs) you own
+- Make DAW plugin wishlists
+- Keep track of prices and other useful info
+- Wrapped up the latest PHP tech (PHP 8.2 and Laravel 10)
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+This is still work in progress - not yet suitable for use.
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## 📖 Table of Contents (Optional)
 
-## Laravel Sponsors
+- [Key Features](#-key-features)
+- [Installation](#-installation)
+- [Usage](#-usage)
+- [Testing](#-tesing)
+- [Roadmap](#-roadmap)
+- [Built With](#-built-with)
+- [How to Contribute](#-how-to-contribute)
+- [Security](#-security)
+- [Acknowledgments](#-acknowledgments)
+- [License](#-license)
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+---
 
-### Premium Partners
+## ⭐️ Key Features
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+Features which are currently implemented:
 
-## Contributing
+- cool features to be listed once implemented...
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
 
-## Code of Conduct
+## ⚙️ Installation
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+Details to be confirmed...
 
-## Security Vulnerabilities
+### 🐳 Docker Support
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+No support for docker...yet!
 
-## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## 🎯 Usage
+
+Notes to be added...
+
+```
+// Usage code and examples here (including commands, etc)
+```
+
+
+## 🚧 Testing
+
+```bash
+composer test
+```
+
+
+## 🚀 Roadmap
+
+- [ ] Feature in pipeline 1
+- [ ] Feature in pipeline 2
+- [ ] Feature in pipeline 3
+
+
+## 👨‍💻 Built With
+
+- PHP 8.2
+- Laravel 10
+- Alpine.js
+- Tailwind CSS
+- PHPUnit
+
+
+## ✍️ How to Contribute
+
+Contributions not yet welcome (until a stable version is created).
+
+
+## 🔒 Security
+
+N/A (Until project reaches beta)
+
+---
+
+## 🏆 Acknowledgments
+
+...
+
+
+## ⚠️ License
+
+The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
