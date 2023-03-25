@@ -39,7 +39,7 @@ jobs:
         uses: shivammathur/setup-php@v2
         with:
           php-version: 8.2
-          extensions: none, iconv, json, phar, tokenizer, redis
+          extensions: none, iconv, json, phar, tokenizer, redis, fileinfo, dom, xml, curl, simplexml, xmlwriter, mbstring
           tools: composer:v2
           coverage: none
 
