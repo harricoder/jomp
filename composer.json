@@ -11,6 +11,7 @@
         "ext-curl": "*",
         "ext-fileinfo": "*",
         "ext-dom": "*",
+        "ext-pdo": "*",
         "ext-xml": "*",
         "ext-xmlwriter": "*",
         "ext-simplexml": "*",
