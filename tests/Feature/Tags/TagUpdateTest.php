@@ -38,7 +38,9 @@ class TagUpdateTest extends TestCase
         $user = User::factory()->create();
         $tag = Tag::factory()->create(['name' => 'Synth']);
 
-        $response = $this->actingAs($user)->from('/tags/synth')->put('/tags/synth', ['name' => 'Sound Design']);
+        $response = $this->actingAs($user)
+            ->from('/tags/synth')
+            ->put('/tags/synth', ['name' => 'Sound Design']);
 
         $tag->refresh();
 

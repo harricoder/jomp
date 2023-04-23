@@ -13,9 +13,9 @@
 
 <p align="center">
     <a href="https://codecov.io/gh/harricoder/jomp"><img src="https://codecov.io/gh/harricoder/jomp/branch/main/graph/badge.svg?token=N7ZQ36DJ7Q"/></a>
-    <a href="https://github.com/harricoder/jomp/actions?query=workflow%3ALint Code+branch%3Amain"><img src="https://github.com/harricoder/jomp/workflows/Lint Code/badge.svg" alt="Code Lint"></a>
-    <a href="https://github.com/harricoder/jomp/actions?query=workflow%3ACode Quality+branch%3Amain"><img src="https://github.com/harricoder/jomp/workflows/Code Quality/badge.svg" alt="Code Quality"></a>
-    <a href="https://github.com/harricoder/jomp/actions?query=workflow%3ATest Code+branch%3Amain"><img src="https://github.com/harricoder/jomp/workflows/Test Code/badge.svg" alt="Code Testing></a>
+    <a href="https://github.com/harricoder/jomp/actions?query=workflow%3ALint Code+branch%3Amain"><img src="https://github.com/harricoder/jomp/workflows/Lint Code/badge.svg?branch=main" alt="Code Lint"></a>
+    <a href="https://github.com/harricoder/jomp/actions?query=workflow%3ACode Quality+branch%3Amain"><img src="https://github.com/harricoder/jomp/workflows/Code Quality/badge.svg?branch=main" alt="Code Quality"></a>
+    <a href="https://github.com/harricoder/jomp/actions?query=workflow%3ATest Code+branch%3Amain"><img src="https://github.com/harricoder/jomp/workflows/Test Code/badge.svg?branch=main" alt="Code Testing></a>
     <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
