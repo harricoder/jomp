@@ -13,6 +13,7 @@ class ViewController extends Controller
 {
     /**
      * Handle the incoming request.
+     * @SuppressWarnings(PHPMD.UnusedFormalParameter)
      */
     public function __invoke(Request $request, Tag $tag): View
     {
