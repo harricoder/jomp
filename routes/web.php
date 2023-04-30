@@ -2,6 +2,11 @@
 
 declare(strict_types=1);
 
+use App\Http\Controllers\Categories\DeleteController as CategoryDeleteController;
+use App\Http\Controllers\Categories\ListController as CategoryListController;
+use App\Http\Controllers\Categories\StoreController as CategoryCreateController;
+use App\Http\Controllers\Categories\UpdateController as CategoryUpdateController;
+use App\Http\Controllers\Categories\ViewController as CategoryViewController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Tags\DeleteController as TagsDeleteController;
@@ -34,6 +39,12 @@ Route::middleware(['auth', 'verified'])->group(function (): void {
     Route::get('tags/{tag}', TagsViewController::class)->name('tags.edit');
     Route::put('tags/{tag}', TagsUpdateController::class)->name('tags.update');
     Route::delete('tags/{tag}', TagsDeleteController::class)->name('tags.destroy');
+
+    Route::get('categories', CategoryListController::class)->name('categories');
+    Route::post('categories', CategoryCreateController::class)->name('category.store');
+    Route::get('categories/{category}', CategoryViewController::class)->name('category.edit');
+    Route::put('categories/{category}', CategoryUpdateController::class)->name('category.update');
+    Route::delete('categories/{category}', CategoryDeleteController::class)->name('category.destroy');
 });
 
 Route::middleware('auth')->group(function (): void {

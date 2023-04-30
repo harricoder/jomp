@@ -2,7 +2,7 @@
 
   <x-slot name="header">
     <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-      {{ __('Tag') }}: {{ $tag->name }}
+      {{ __('Category') }}: {{ $category->name }}
     </h2>
   </x-slot>
 
@@ -13,39 +13,39 @@
           <section>
             <header>
               <h2 class="text-lg font-medium text-gray-900 dark:text-gray-100">
-                {{ __('Update Tag') }}
+                {{ __('Update Category') }}
               </h2>
 
               <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">
-                {{ __("Update the tag name (slug is automatically generated).") }}
+                {{ __("Update the category name (slug is automatically generated).") }}
               </p>
             </header>
 
-            <form method="POST" action="{{ route('tags.update', $tag->slug) }}" class="mt-6 space-y-6">
+            <form method="POST" action="{{ route('category.update', $category->slug) }}" class="mt-6 space-y-6">
               @csrf
               @method('PUT')
 
               <div>
                 <x-input-label for="name" :value="__('Name')"/>
-                <x-text-input id="name" name="name" type="text" class="mt-1 block w-full" :value="old('name', $tag->name)" required autofocus autocomplete="name"/>
+                <x-text-input id="name" name="name" type="text" class="mt-1 block w-full" :value="old('name', $category->name)" required autofocus autocomplete="name"/>
                 <x-input-error class="mt-2" :messages="$errors->get('name')"/>
               </div>
 
               <div class="opacity-70">
                 <x-input-label for="slug" :value="__('Slug')"/>
-                <x-text-input id="slug" name="slug" type="text" class="mt-1 block w-full bg-gray-100" :value="old('slug', $tag->slug)" disabled/>
+                <x-text-input id="slug" name="slug" type="text" class="mt-1 block w-full bg-gray-100" :value="old('slug', $category->slug)" disabled/>
                 <x-input-error class="mt-2" :messages="$errors->get('slug')"/>
               </div>
 
               <div class="opacity-70">
                 <x-input-label for="created_at" :value="__('Created Date')"/>
-                <x-text-input id="created_at" name="created_at" type="text" class="mt-1 block w-full bg-gray-100" :value="old('created_at', $tag->created_at)" disabled/>
+                <x-text-input id="created_at" name="created_at" type="text" class="mt-1 block w-full bg-gray-100" :value="old('created_at', $category->created_at)" disabled/>
                 <x-input-error class="mt-2" :messages="$errors->get('created_at')"/>
               </div>
 
               <div class="opacity-70">
                 <x-input-label for="updated_at" :value="__('Updated Date')"/>
-                <x-text-input id="updated_at" name="updated_at" type="text" class="mt-1 block w-full bg-gray-100" :value="old('updated_at', $tag->updated_at)" disabled/>
+                <x-text-input id="updated_at" name="updated_at" type="text" class="mt-1 block w-full bg-gray-100" :value="old('updated_at', $category->updated_at)" disabled/>
                 <x-input-error class="mt-2" :messages="$errors->get('created_at')"/>
               </div>
 
@@ -93,35 +93,35 @@
           <section class="space-y-6">
             <header>
               <h2 class="text-lg font-medium text-gray-900 dark:text-gray-100">
-                {{ __('Delete Tag') }}
+                {{ __('Delete Category') }}
               </h2>
 
               <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">
-                {{ __('Deleting this tag cannot be undone!') }}
+                {{ __('Deleting this category cannot be undone!') }}
               </p>
             </header>
 
             <div class="flex justify-between">
-              <x-danger-button x-data="" x-on:click.prevent="$dispatch('open-modal', 'confirm-tag-deletion')">
-                {{ __('Delete Tag') }}
+              <x-danger-button x-data="" x-on:click.prevent="$dispatch('open-modal', 'confirm-category-deletion')">
+                {{ __('Delete Category') }}
               </x-danger-button>
 
-              <a href="{{ route('tags') }}" class="inline-flex items-center px-4 py-2 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-500 rounded-md font-semibold text-xs text-gray-700 dark:text-gray-300 uppercase tracking-widest shadow-sm hover:bg-gray-50 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:focus:ring-offset-gray-800 disabled:opacity-25 transition ease-in-out duration-150">
+              <a href="{{ route('categories') }}" class="inline-flex items-center px-4 py-2 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-500 rounded-md font-semibold text-xs text-gray-700 dark:text-gray-300 uppercase tracking-widest shadow-sm hover:bg-gray-50 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:focus:ring-offset-gray-800 disabled:opacity-25 transition ease-in-out duration-150">
                 Cancel
               </a>
             </div>
 
-            <x-modal name="confirm-tag-deletion" focusable>
-              <form method="POST" action="{{ route('tags.destroy', $tag->slug) }}" class="p-6">
+            <x-modal name="confirm-category-deletion" focusable>
+              <form method="POST" action="{{ route('category.destroy', $category->slug) }}" class="p-6">
                 @csrf
                 @method('DELETE')
 
                 <h2 class="text-lg font-medium text-gray-900 dark:text-gray-100">
-                  {{ __('Are you sure you want to delete this tag?') }}
+                  {{ __('Are you sure you want to delete this category?') }}
                 </h2>
 
                 <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">
-                  {{ __('Once this tag is deleted, it cannot be undone, all plugin links will be permanently deleted.') }}
+                  {{ __('Once this category is deleted, it cannot be undone, all plugin links will be permanently deleted.') }}
                 </p>
 
                 <div class="mt-6 flex justify-end">
@@ -130,7 +130,7 @@
                   </x-secondary-button>
 
                   <x-danger-button class="ml-3">
-                    {{ __('Delete Tag') }}
+                    {{ __('Delete Category') }}
                   </x-danger-button>
                 </div>
               </form>
