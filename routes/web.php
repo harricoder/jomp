@@ -8,6 +8,11 @@ use App\Http\Controllers\Categories\StoreController as CategoryCreateController;
 use App\Http\Controllers\Categories\UpdateController as CategoryUpdateController;
 use App\Http\Controllers\Categories\ViewController as CategoryViewController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\Manufacturers\DeleteController as ManufacturerDeleteController;
+use App\Http\Controllers\Manufacturers\ListController as ManufacturerListController;
+use App\Http\Controllers\Manufacturers\StoreController as ManufacturerCreateController;
+use App\Http\Controllers\Manufacturers\UpdateController as ManufacturerUpdateController;
+use App\Http\Controllers\Manufacturers\ViewController as ManufacturerViewController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Tags\DeleteController as TagsDeleteController;
 use App\Http\Controllers\Tags\ListController as TagsListController;
@@ -45,6 +50,21 @@ Route::middleware(['auth', 'verified'])->group(function (): void {
     Route::get('categories/{category}', CategoryViewController::class)->name('category.edit');
     Route::put('categories/{category}', CategoryUpdateController::class)->name('category.update');
     Route::delete('categories/{category}', CategoryDeleteController::class)->name('category.destroy');
+
+    Route::get('manufacturers', ManufacturerListController::class)->name('manufacturers');
+    Route::post('manufacturers', ManufacturerCreateController::class)->name('manufacturer.store');
+    Route::get(
+        'manufacturers/{manufacturer}',
+        ManufacturerViewController::class
+    )->name('manufacturer.edit');
+    Route::put(
+        'manufacturers/{manufacturer}',
+        ManufacturerUpdateController::class
+    )->name('manufacturer.update');
+    Route::delete(
+        'manufacturers/{manufacturer}',
+        ManufacturerDeleteController::class
+    )->name('manufacturer.destroy');
 });
 
 Route::middleware('auth')->group(function (): void {

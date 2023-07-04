@@ -1,0 +1,156 @@
+<x-app-layout>
+
+  <x-slot name="header">
+    <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
+      {{ __('Manufacturer') }}: {{ $manufacturer->name }}
+    </h2>
+  </x-slot>
+
+  <div class="py-12">
+    <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 space-y-6">
+      <div class="p-4 sm:p-8 bg-white dark:bg-gray-800 shadow sm:rounded-lg">
+        <div class="max-w-xl">
+          <section>
+            <header>
+              <h2 class="text-lg font-medium text-gray-900 dark:text-gray-100">
+                {{ __('Update Manufacturer') }}
+              </h2>
+
+              <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">
+                {{ __("Update the manufacturer name (slug is automatically generated) and details.") }}
+              </p>
+            </header>
+
+            <form method="POST" action="{{ route('manufacturer.update', $manufacturer->slug) }}" class="mt-6 space-y-6">
+              @csrf
+              @method('PUT')
+
+              <div>
+                <x-input-label for="name" :value="__('Name')"/>
+                <x-text-input id="name" name="name" type="text" class="mt-1 block w-full" :value="old('name', $manufacturer->name)" required autofocus autocomplete="name"/>
+                <x-input-error class="mt-2" :messages="$errors->get('name')"/>
+              </div>
+
+              <div>
+                <x-input-label for="description" :value="__('Description')"/>
+                <x-text-area id="description" name="description" class="mt-1 block w-full" :rows="5" autofocus autocomplete="description">{{ old('description', $manufacturer->description) }}</x-text-area>
+                <x-input-error class="mt-2" :messages="$errors->get('description')"/>
+              </div>
+
+              <div>
+                <x-input-label for="url" :value="__('URL')"/>
+                <x-text-input id="url" name="url" url="url" type="text" class="mt-1 block w-full" :value="old('url', $manufacturer->url)" autofocus autocomplete="url"/>
+                <x-input-error class="mt-2" :messages="$errors->get('url')"/>
+              </div>
+
+              <div class="opacity-70">
+                <x-input-label for="slug" :value="__('Slug')"/>
+                <x-text-input id="slug" name="slug" type="text" class="mt-1 block w-full bg-gray-100" :value="old('slug', $manufacturer->slug)" disabled/>
+                <x-input-error class="mt-2" :messages="$errors->get('slug')"/>
+              </div>
+
+              <div class="opacity-70">
+                <x-input-label for="created_at" :value="__('Created Date')"/>
+                <x-text-input id="created_at" name="created_at" type="text" class="mt-1 block w-full bg-gray-100" :value="old('created_at', $manufacturer->created_at)" disabled/>
+                <x-input-error class="mt-2" :messages="$errors->get('created_at')"/>
+              </div>
+
+              <div class="opacity-70">
+                <x-input-label for="updated_at" :value="__('Updated Date')"/>
+                <x-text-input id="updated_at" name="updated_at" type="text" class="mt-1 block w-full bg-gray-100" :value="old('updated_at', $manufacturer->updated_at)" disabled/>
+                <x-input-error class="mt-2" :messages="$errors->get('created_at')"/>
+              </div>
+
+              <div class="flex items-center gap-4">
+                <x-primary-button>{{ __('Update') }}</x-primary-button>
+
+                @if (session('status') === 'profile-updated')
+                  <p x-data="{ show: true }" x-show="show" x-transition x-init="setTimeout(() => show = false, 2000)" class="text-sm text-green-600 dark:text-green-400">
+                    {{ __('Updated!') }}
+                  </p>
+                @endif
+              </div>
+            </form>
+          </section>
+        </div>
+      </div>
+
+      <div class="p-4 sm:p-8 bg-white dark:bg-gray-800 shadow sm:rounded-lg">
+        <div class="max-w-xl">
+          <table class="w-full whitespace-no-wrap">
+            <thead>
+              <tr
+                class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800">
+                <th class="px-4 py-3">
+                  Plugin Name
+                </th>
+                <th class="px-4 py-3">
+                  Status
+                </th>
+                <th class="px-4 py-3">
+                  Created Date
+                </th>
+                <th class="px-4 py-3">
+                  Update Date
+                </th>
+              </tr>
+            </thead>
+
+          </table>
+        </div>
+      </div>
+
+      <div class="p-4 sm:p-8 bg-white dark:bg-gray-800 shadow sm:rounded-lg">
+        <div class="max-w-xl">
+          <section class="space-y-6">
+            <header>
+              <h2 class="text-lg font-medium text-gray-900 dark:text-gray-100">
+                {{ __('Delete Manufacturer') }}
+              </h2>
+
+              <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">
+                {{ __('Deleting this manufacturer cannot be undone!') }}
+              </p>
+            </header>
+
+            <div class="flex justify-between">
+              <x-danger-button x-data="" x-on:click.prevent="$dispatch('open-modal', 'confirm-manufacturer-deletion')">
+                {{ __('Delete Manufacturer') }}
+              </x-danger-button>
+
+              <a href="{{ route('manufacturers') }}" class="inline-flex items-center px-4 py-2 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-500 rounded-md font-semibold text-xs text-gray-700 dark:text-gray-300 uppercase tracking-widest shadow-sm hover:bg-gray-50 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:focus:ring-offset-gray-800 disabled:opacity-25 transition ease-in-out duration-150">
+                Cancel
+              </a>
+            </div>
+
+            <x-modal name="confirm-manufacturer-deletion" focusable>
+              <form method="POST" action="{{ route('manufacturer.destroy', $manufacturer->slug) }}" class="p-6">
+                @csrf
+                @method('DELETE')
+
+                <h2 class="text-lg font-medium text-gray-900 dark:text-gray-100">
+                  {{ __('Are you sure you want to delete this manufacturer?') }}
+                </h2>
+
+                <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">
+                  {{ __('Once this manufacturer is deleted, it cannot be undone, all plugin links will be permanently deleted.') }}
+                </p>
+
+                <div class="mt-6 flex justify-end">
+                  <x-secondary-button class="ml-3" x-on:click="$dispatch('close')">
+                    {{ __('Cancel') }}
+                  </x-secondary-button>
+
+                  <x-danger-button class="ml-3">
+                    {{ __('Delete Manufacturer') }}
+                  </x-danger-button>
+                </div>
+              </form>
+            </x-modal>
+          </section>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</x-app-layout>
